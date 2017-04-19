@@ -4,10 +4,18 @@
 \usepackage{titling}       % Abstract on titlepage
 \usepackage{changepage}    % Change width of abstract text
 \usepackage{float}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
 \usepackage[backend=bibtex,bibstyle=numeric,sorting=nyt]{biblatex}
 \usepackage[toc,page]{appendix}
 \usepackage{pdfpages}
 \usepackage{amsmath}
+
+% "Abstract" gets translated to "Zusammenfassung". Correct this
+% http://www.tex.ac.uk/FAQ-fixnam.html
+\addto\captionsngerman{%
+  \renewcommand{\abstractname}{Abstract}%
+}
 
 \usepackage{siunitx}
 \sisetup{output-exponent-marker=\ensuremath{\mathrm{E}}}
