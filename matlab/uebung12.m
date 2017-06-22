@@ -58,18 +58,22 @@ Z4k = R0r;
 
 % Insert first U.E.
 [Z1k, L1k] = kuroda(Z1k, C1r, 'C2L');
+[Z2k, C2k] = kuroda(Z2k, L2r, 'L2C');
+[Z3k, L3k] = kuroda(Z3k, C3r, 'C2L');
+[Z4k, C4k] = kuroda(Z4k, L4r, 'L2C');
 
 % Insert second U.E. and shift first
 [Z2k, C1k] = kuroda(Z2k, L1k, 'L2C');
 [Z1k, C2k] = kuroda(Z1k, L2r, 'L2C');
 
 % Insert third U.E. and shift first and second
-[Z3k, L1k] = kuroda(Z3k, C1k, 'C2L');
-[Z2k, L2k] = kuroda(Z2k, C2k, 'C2L');
-[Z1k, L3k] = kuroda(Z1k, C3r, 'C2L');
+% [Z3k, L1k] = kuroda(Z3k, C1k, 'C2L');
+% [Z2k, L2k] = kuroda(Z2k, C2k, 'C2L');
+% [Z1k, L3k] = kuroda(Z1k, C3r, 'C2L');
 
 % Insert fourth U.E. and shift, first, second and third
-[Z4k, C1k] = kuroda(Z4k, L1k, 'L2C');
-[Z3k, C2k] = kuroda(Z3k, L2k, 'L2C');
-[Z2k, C3k] = kuroda(Z2k, L3k, 'L2C');
-[Z1k, C4k] = kuroda(Z1k, L4r, 'L2C');
+% [Z4k, C1k] = kuroda(Z4k, L1k, 'L2C');
+% [Z3k, C2k] = kuroda(Z3k, L2k, 'L2C');
+% [Z2k, C3k] = kuroda(Z2k, L3k, 'L2C');
+% [Z1k, C4k] = kuroda(Z1k, L4r, 'L2C');
+
