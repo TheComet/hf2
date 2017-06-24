@@ -1,19 +1,17 @@
 \section{Theorie}
 
-Um den Leser den Einstieg in die Thematik zu erleichtern, wird zuerst einmal aufgezeigt, um was es sich bei einem Stubfilter genau handelt. Im Anschluss wird das typische Vorgehen einer Filterdimensionierung beschrieben, mit welchem ein Stubfilter realisiert werden kann.
+Um den  Leser  den Einstieg in die Thematik zu erleichtern, wird zuerst einmal
+aufgezeigt, um  was  es  sich bei einem Stubfilter genau handelt. Im Anschluss
+wird  das  typische  Vorgehen  einer  Filterdimensionierung  beschrieben,  mit
+welchem ein Stubfilter realisiert werden kann.
 
-\subsection{Stubfilter}
-
-LC-Filter können in einem weiten Frequenzbereich eingesetzt werden. Jedoch wird bei konzentrierten Elementen zu höheren Frequenzen hin der Einfluss der parasitären Eigenschaften immer deutlicher, so dass hohe Anaforderungen an die Bauteilgüte gestellt werden müssen. Im GHZ-Bereich wird es daher zunehmend attraktiv, statt konzentrierten Kapazitäten und Induktivitäten verteilte Strukturen in Form von Leitungen zu verwenden. Man spricht dann von sogenannten Leitungsfilter.
-%Quelle direktes Zitat: 
-%https://books.google.ch/books?id=MTVQAgAAQBAJ&pg=PA203&lpg=PA203&dq=leitungsfilter+hochfrequenztechnik&source=bl&ots=Ljf0GRJkZt&sig=n-0G9H5VZ9iuPc2qepAATnjA47M&hl=de&sa=X&ved=0ahUKEwj38u-T79DUAhUSL1AKHUsyDNMQ6AEINTAB#v=onepage&q=leitungsfilter%20hochfrequenztechnik&f=false%
-
-Es gibt verschiedene Arten um Leitungsfilter zu realisieren. Eine Möglichkeit der Realisierung ist das Stubfilter. Dieses Filter verwendet gleichlange kurzgeschlossenen Leitungen (TLSC) und leerlaufende Leitungen(TLOC), die nur an einem Ende verbunden werden. Das andere Ende wird entweder kurzgeschlossen oder eben offen gelassen. Bei diesen Leitungen handelt es sich um sogennante Stubs(Stichleitungen), die sich bei hohen Frequenzen wie reaktive Elemente (L,C) verhalten und somit die Realisierung eines Mikrowellenfilter ermöglichen.
-%Der grosse Vorteil von Stubfiltern ist, das eine geschlossene Theorie zur Filtersynthese existiert. 
-
-\newpage
+\input{sections/theorie/prototypfilter}
+\input{sections/theorie/stubfilter}
+\input{sections/theorie/richards-frequenztransformation}
+\input{sections/theorie/kuroda-transformation}
 
 
+% TODO Move this somewhere else
 \subsection{Ablauf Filterdimensionierung}
 
 Der grundsätzliche Vorgehen bei der Filterdimensionierung ist bei fast allen Filtertypen gleich. Deshalb wird zuerst der allgemeinen Ablauf(Abb.\ref{fig:Ablauf_Filterdimensionierung_Allgemein}) der Filterdimensionierung beschrieben 
@@ -39,24 +37,4 @@ Mit der Richard's Transformation können die konzentrierten Elemente (L,C) des P
 
 Deshalb wird im Anschluss die Kuroda Transformation verwendet,  um eine physikalische Distanz zwischen
 den  Stubs  zu  schaffen, damit das Filter auch in Realit\"at umgesetzt  werden  kann.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
