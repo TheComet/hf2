@@ -16,11 +16,9 @@ Es gibt verschiedene Arten um Leitungsfilter zu realisieren. Eine Möglichkeit d
 
 \subsection{Ablauf Filterdimensionierung}
 
-Bei der Filterdimensionierung wird unabhängig vom Filtertyp meistens gleich vorgegangen. Deshalb wird zuerst der allgmeine Fall der Filterdimensionierung betrachtet und dann speziell auf die Filterdimensionierung eines Stubfilters eingegangen.
+Der grundsätzliche Vorgehen bei der Filterdimensionierung ist bei fast allen Filtertypen gleich. Deshalb wird zuerst der allgemeinen Ablauf(Abb.\ref{fig:Ablauf_Filterdimensionierung_Allgemein}) der Filterdimensionierung beschrieben 
 
-\paragraph{Allgemeine Filterdimensionierung}
-
-Der Entwurfsprozess jedes Filters (Abb.\ref{fig:Ablauf_Filterdimensionierung_Allgemein}) beginnt mit der Filterspezifikation, welche mathematisch mit einer Funktion im Prototypbereich T(s) beschrieben wird. Aus dieser Funktion kann mit Hilfe einer Filtersynthese (rot) eine realisierbare Filterstruktur gefunden werden. Dabei ist zu beachten, dass  physikalische Randbedingungen einbezogen werden müssen, die nicht beliebig steile und beliebig verlustfreie Filtercharakteristiken erlauben.
+Der Entwurfsprozess jedes Filters beginnt mit der Filterspezifikation, welche mathematisch mit einer Funktion im Prototypbereich T(s) beschrieben wird. Aus dieser Funktion kann mit Hilfe einer Filtersynthese (rot) eine realisierbare Filterstruktur gefunden werden. Dabei ist zu beachten, dass  physikalische Randbedingungen einbezogen werden müssen, die nicht beliebig steile und beliebig verlustfreie Filtercharakteristiken erlauben.
 
 Die Filtersynthesen unterschiedlicher Realisierungen haben gemeinsam, dass sie alle auf der klassischen LC-Filtersynthese basieren. Nach der LC-Filtersynthese liegt ein LC-Prototypfilter vor. Dieses LC-Prototypfilter wird bei der anschliessenden Filter-Realisierung mithilfe von unterschiedlichen Transformationen in den gewünschten Filter-Typ überführt(falls nötig). Für Elektroingenieure bekannte Transformationen sind z.B die billineare und die impulsinvariante Transformation, welche zur Überführung von einem LC-Filter in ein digitales Filter verwendet werden. Nach der Transformation ist die Filtersynthese abgeschlossen. Zuletzt wird das Filter aufgebaut wenn bei der Analyse alle Spezifikationen eingehalten wurden.
 
@@ -33,29 +31,14 @@ Die Filtersynthesen unterschiedlicher Realisierungen haben gemeinsam, dass sie a
 
 %Liegen keine speziellen Anforderungen an das Filter vor, so können Standardfilter(Butterworth, Chebyshev, Bessel und Cauer)verwendet werden. Die Reaktanzwerte, welche für die Beschreibung der Übertragungsfunktion des LC-Prototypfilters notwendig sind, sind aus Tabellen zu entnehmen. Werden Spezielle Anforderungen an das Filter gestellt, so eignen sich die Standardfilter nicht und es muss eine LC-Filtersynthese durchgeführt werden.
 
-\paragraph{Stubfilter-Dimensionierung}
+\paragraph{Realisierung Stubfilter}
 
-In Abb. \ref{fig:Ablauf_Filterdimensionierung} ist der Ablauf dargestellt , welcher bei der Dimensionierung eines Stubfilters befolgt werden muss. Wie man sehen kann 
+Um schlussendlich vom LC-Prototypfilter zu einem realisierebaren Stubfilter zu gelangen sind zwei Transformationen notwendig: Die Richard's Transformation und die Kuroda Transformation.
 
-%Ausgangslage für jede Filterdimensionierung ist die Filterspezifikation, welche im Frequenz- oder Zeitbereich vorliegt. Diese Filterspezifikation wird anschliessen mathematisch mit einer Funktion in der s-Ebene (Prototypbereich) beschrieben. Mit einem Synthesetool kann aus der Funktion in der s-Ebene ein Prototypfilter mit konzentrierten Elementen(R,L,C) gefunden werden. Dabei gibt das Synthesetool die Topologie, sowie die Bauteilwerte aus. Liegt kein Synthesetool vor, so müssen Standardfilter (Butterworth, Chebyshev, Bessel und Cauer) verwendet werden, deren Topologie und Bauteilwerte normiert aus einer Tabelle zu entnehmen sind. Bei sehr speziellen Anforderungen an das Filter reichen die Standardfilter aber meist nicht aus um die Filterspezifikationen einzuhalten.
+Mit der Richard's Transformation können die konzentrierten Elemente (L,C) des Prototypfilter mit verteilte Elementen (Stubs) ersetzt werden. Nach dieser Transformation spricht man von einem Stubfilter. Das Problem ist aber, dass sich dieses Filter nicht realisieren lässt, weil sich alle Stubs am gleichen Ort befinden. 
 
-%Nach der Synthese liegt nun ein Prototypfilter mit konzentrierten Elementen vor, gesucht ist aber ein Stubfilter, welches aus verteilten Elementen (Leitungen) besteht. Hier kommt die Frequenztransformation von Richards zum Zuge. Richards konnte zeigen, dass sich gleichlange, verlustlose Leitungen (TLSC,TLOC) gleich wie konzentrierte Elemente verhalten, wenn die folgende Transformation für die laplace variable verwendet wird.
-
-
-
-TLSC = ideale, verlustlose Transmission Line im kurzschluss
-TLOC = ideale, verlustlse Tranmissin Line im Leerlauf
-
-
-
-\newpage
-
-\begin{figure}[h!]
-\centering
- 	\includegraphics[width=0.4\textwidth]{Ablauf_Filterdimensionierung.png}
- 	\caption{Ablauf der Stubfilter-Dimensionierung}
- 	\label{fig:Ablauf_Filterdimensionierung}
-\end{figure}
+Deshalb wird im Anschluss die Kuroda Transformation verwendet,  um eine physikalische Distanz zwischen
+den  Stubs  zu  schaffen, damit das Filter auch in Realit\"at umgesetzt  werden  kann.
 
 
 
@@ -71,20 +54,6 @@ TLOC = ideale, verlustlse Tranmissin Line im Leerlauf
 
 
 
-%Die "Übersetzung" von klassischen LC-Filtern in Leitungsfilter kann meist problemlos und rein routinemässig vorgenommen werden. Leider resultieren dabei häufig Filterstrukturen, die beispielsweise mit Mikrostreifenleitungen nicht ausführbar sind, da diese einen nur sehr eingeschränkten Bereich der Wellenimpedanz zulassen. So lässt z. B. ein AJumina-Substrat (Er = 10) nur einen Bereich der Wellenimpedanz von Zw = 20 ... 100 n mit vernünftigen Leiterbreiten zu. Die Kunst des Filterentwurfs liegt also darin, den richtigen, mit der gewählten Technik realisierbaren Filtertyp zu finden.
-
-
-Diese Einführung zum Entwurf von Leitungsfiltem der Höchstfrequenztechnik umfasst folgen-
-de Teile:
-1. Einführung zu Butterworth- und Tschebyscheff-Filtern. Filterentwurf mit Standardtief-
-pässen.
-2. Die Richards-Transformation, welche erlaubt, ein LC-Filter in einen Typ von Leitungsfil-
-ter überzuführen (Filter mit kommensurablen Leitungen).
-3. Die Kuroda-Transformation, welche einen Teil der Richards-transformierten Filter in rea-lisierbare Mikrostreifenfilter umzuwandeln vermag.
-4. Schmalbandige Bandpässe mit Leitungselementen als Impedanzinverter.
-
-
-%Bärchtold
 
 
 
