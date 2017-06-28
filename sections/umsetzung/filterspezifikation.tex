@@ -30,7 +30,9 @@ g_6 & = & 1 \\
 \end{equation*} 
 \end{mdframed}
 
-Durch eine Simulation in Mirowave Office (MWO) kann gezeigt werden, dass es sich beim Prototypfilter um ein Chebyshev Filter des Typs 1 handelt, weil das Filter im Passband einen Equirippel und im Stopband keinen Rippel aufweist. Dies wird aus der Übersichtdarstellung in Abb. \ref{fig:Ovw_Prototyp} ersichtlich, wo gleichzeitig die Einfügedämpfung S21 und die Reflexion S11 des simulierten Prototypfilters zu sehen ist.
+Durch eine Simulation in Mirowave Office (MWO) kann gezeigt werden, dass es sich beim Prototypfilter um ein Chebyshev Filter des Typs 1 handelt, weil das Filter im Passband einen Equirippel und im Stopband keinen Rippel aufweist. 
+
+Die Übersichtsdarstellung der Eingügedämpfung S21 (Abb. \ref{fig:Ovw_Prototyp}) zeigt, dass das Filter keinen Stopbandrippel aufweist.
 
 \begin{figure}[h!]
 \centering
@@ -39,7 +41,7 @@ Durch eine Simulation in Mirowave Office (MWO) kann gezeigt werden, dass es sich
  	\label{fig:Ovw_Prototyp}
 \end{figure}
 
-Durch einen Zoom der Einfügedämpfung S21 in Abb. \ref{fig:Prototyp_Passbandrippel} wird der Equirippel des Passbands, sowie die erwartete Grenzfrequenz von $\omega_C = 1$  ersichtlich.
+Erst die Detailanssicht der Einfügedämpfung S21 in Abb. \ref{fig:Prototyp_Passbandrippel} zeigt, dass das Prototypfilter im Passband auch noch einen kleinen Equirippel aufweist. Ausserdem zeigt sich aus der Detailansicht, dass das Filter wie er erwartete eine Grenzfrequenz von $\omega_C = 1$ aufweist.
 
 \begin{mdframed}
 \begin{equation*} 
@@ -58,7 +60,39 @@ f_C & = & 0.1592 Hz \\
  	\label{fig:Prototyp_Passbandrippel}
 \end{figure}
 
-Der vollständigkeit halber, wird auch noch die Reflexion S11 in Abb. 
+Ein verlustloses Filter lässt sich nicht nur mit der Einfgedämpfung S21 sondern auch mit der Reflexion S11 beschreiben, weil der folgende Zusammenhang gilt:
+
+\begin{equation}
+{|S11|}^2 + {|S21|}^2 = 1
+\end{equation}
+
+Somit kann die Reflexion im Passband mithilfe des Equirippels im Passband berechnet werden.
+
+\begin{equation}
+|S11| = \sqrt{1-{|Equirippel|}^2} = -20 dB
+\end{equation}
+
+Um das Resultat zu validieren, wurde die Reflexion S11 des Filter simuliert und in Abb. \ref{fig:Prototyp_Reflexion} dargestellt.
+
+\begin{figure}[h!]
+\centering
+ 	\includegraphics[width=0.5\textwidth]{Prototyp_Reflexion.png}
+ 	\caption{Reflexion in Passband}
+ 	\label{fig:Prototyp_Reflexion}
+\end{figure}
+
+Es handelt sich beim zu realisierenden Stubfilter um ein Chebyshev Filter des Typ 1 mit folgenden Eigeschaften: 
+\begin{mdframed}
+\begin{equation*} 
+\begin{array}{cllll} 
+f_C & = & 0.8 GHz \\ 
+f_\frac{\lambda}{4} & = & 2 GHz \\ 
+l & = & 37.5mm \\
+Equirippel (Passband) & = & -0.004355 dB \\
+Reflexion (Passband) & = & -20 dB \\
+\end{array} 
+\end{equation*} 
+\end{mdframed}
 
 
-Beim zu realisierende Stubfilter soll von einem Prototyp-Filter mit den folgenden Elementwerten ausgegange werden.
+
