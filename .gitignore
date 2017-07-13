@@ -8,10 +8,10 @@
 *.fls
 *.fdb_latexmk
 *.dvi
-*.pdf
 *-blx.bib
 *.bcf
 *.run.xml
+hf2_bericht_ackermann_murray.pdf
 
 # MATLAB
 *.m~
