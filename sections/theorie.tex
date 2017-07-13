@@ -2,10 +2,32 @@
 
 %Um den  Leser  den Einstieg in die Thematik zu erleichtern, wird zuerst einmalaufgezeigt, um  was  es  sich bei einem Stubfilter genau handelt. Im Anschlusswird  das  typische  Vorgehen  einer  Filterdimensionierung  beschrieben,  mit welchem ein Stubfilter realisiert werden kann.
 
+In  dieser  Arbeit  geht  es  um die  Synthetisierung  und  Optimierung  eines
+Mikrowellenfilters (Stubfilter) in Microstrip-Technologie.
+
+Ausgangslage  für  die  Synthethisierung  des  Stubfilter  sind   voberechnete
+``g-Parameter'',  welche  nach  Methoden  der   klassischen  LC-Filtersynthese
+gefunden  werden.  Diese  ``g-Parameter'' beschreiben  ein  impedanznormiertes
+LC-Prototypfilter    auf    welches    zwei    verschiedene   Transformationen
+angewendet werden: Die Richard's Transformation und die Kuroda Transformation.
+
+Mit der Richard's Transformation können  die konzentrierten Elemente (L,C) des
+Prototypfilters mit verteilte  Elementen  (Stubs)  ersetzt werden. Nach dieser
+Transformation  spricht  man  von einem Stubfilter. Das Problem ist aber, dass
+sich dieses Filter nicht realisieren lässt,  weil sich alle Stubs konzentriert
+am gleichen Ort befinden.
+
+Deshalb  wird  im Anschluss  die  Kuroda  Transformation  verwendet,  um  eine
+physikalische Distanz zwischen den Stubs zu schaffen, damit das Filter auch in
+Realit\"at  umgesetzt  werden  kann.  Obwohl  für  die  Kuroda  Transformation
+sogenannte  ``Unit  Elements''  eingebaut  werden   müssen,  ändert  sich  die
+Filterordnung nicht.
+
+Im  Anschluss  an   die  Filtersynthese  wird  der  Sperrbereich  des  Filters
+optimiert,  was  eine  Erhöhung  der Filterordnung um die  Anzahl  eingebauter
+``Unit  Elements'' bewirkt.
+
 \input{sections/theorie/prototypfilter}
-
-
-
 \input{sections/theorie/stubfilter}
 \input{sections/theorie/richards-frequenztransformation}
 \input{sections/theorie/kuroda-transformation}
