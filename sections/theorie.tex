@@ -1,14 +1,20 @@
 \section{Theorie}
 
-%Um den  Leser  den Einstieg in die Thematik zu erleichtern, wird zuerst einmalaufgezeigt, um  was  es  sich bei einem Stubfilter genau handelt. Im Anschlusswird  das  typische  Vorgehen  einer  Filterdimensionierung  beschrieben,  mit welchem ein Stubfilter realisiert werden kann.
 
 In  dieser  Arbeit  geht  es  um die  Synthetisierung  und  Optimierung  eines
 Mikrowellenfilters (Stubfilter) in Microstrip-Technologie.
 
-Ausgangslage  für  die  Synthethisierung  des  Stubfilter  sind   voberechnete
+\begin{figure}[h!]
+\centering
+ 	\includegraphics[width=\imagewidth]{images/Ablauf_Filterdimensionierung.pdf}
+ 	\caption{Ablauf Stubfilter-Dimensionierung}
+ 	\label{fig:Ablauf_Filterdimensionierung}
+\end{figure}
+
+Ausgangslage  für  die  Synthethisierung  des  Stubfilter  sind oftmals voberechnete
 ``g-Parameter'',  welche  nach  Methoden  der   klassischen  LC-Filtersynthese
 gefunden  werden.  Diese  ``g-Parameter'' beschreiben  ein  impedanznormiertes
-LC-Prototypfilter    auf    welches    zwei    verschiedene   Transformationen
+LC-Prototypfilter, auf    welches    zwei    verschiedene   Transformationen
 angewendet werden: Die Richard's Transformation und die Kuroda Transformation.
 
 Mit der Richard's Transformation können  die konzentrierten Elemente (L,C) des
@@ -31,32 +37,4 @@ optimiert,  was  eine  Erhöhung  der Filterordnung um die  Anzahl  eingebauter
 \input{sections/theorie/stubfilter}
 \input{sections/theorie/richards-frequenztransformation}
 \input{sections/theorie/kuroda-transformation}
-
-
-% TODO Move this somewhere else
-\subsection{Ablauf Filterdimensionierung}
-
-Der grundsätzliche Vorgehen bei der Filterdimensionierung ist bei fast allen Filtertypen gleich. Deshalb wird zuerst der allgemeinen Ablauf(Abb.\ref{fig:Ablauf_Filterdimensionierung_Allgemein}) der Filterdimensionierung beschrieben 
-
-Der Entwurfsprozess jedes Filters beginnt mit der Filterspezifikation, welche mathematisch mit einer Funktion im Prototypbereich T(s) beschrieben wird. Aus dieser Funktion kann mit Hilfe einer Filtersynthese (rot) eine realisierbare Filterstruktur gefunden werden. Dabei ist zu beachten, dass  physikalische Randbedingungen einbezogen werden müssen, die nicht beliebig steile und beliebig verlustfreie Filtercharakteristiken erlauben.
-
-Die Filtersynthesen unterschiedlicher Realisierungen haben gemeinsam, dass sie alle auf der klassischen LC-Filtersynthese basieren. Nach der LC-Filtersynthese liegt ein LC-Prototypfilter vor. Dieses LC-Prototypfilter wird bei der anschliessenden Filter-Realisierung mithilfe von unterschiedlichen Transformationen in den gewünschten Filter-Typ überführt(falls nötig). Für Elektroingenieure bekannte Transformationen sind z.B die billineare und die impulsinvariante Transformation, welche zur Überführung von einem LC-Filter in ein digitales Filter verwendet werden. Nach der Transformation ist die Filtersynthese abgeschlossen. Zuletzt wird das Filter aufgebaut wenn bei der Analyse alle Spezifikationen eingehalten wurden.
-
-\begin{figure}[h!]
-\centering
- 	\includegraphics[width=\imagewidth]{images/Ablauf_Filterdimensionierung_Allgemein.png}
- 	\caption{Ablauf Filterdimensionierung}
- 	\label{fig:Ablauf_Filterdimensionierung_Allgemein}
-\end{figure}
-
-%Liegen keine speziellen Anforderungen an das Filter vor, so können Standardfilter(Butterworth, Chebyshev, Bessel und Cauer)verwendet werden. Die Reaktanzwerte, welche für die Beschreibung der Übertragungsfunktion des LC-Prototypfilters notwendig sind, sind aus Tabellen zu entnehmen. Werden Spezielle Anforderungen an das Filter gestellt, so eignen sich die Standardfilter nicht und es muss eine LC-Filtersynthese durchgeführt werden.
-
-\paragraph{Realisierung Stubfilter}
-
-Um schlussendlich vom LC-Prototypfilter zu einem realisierebaren Stubfilter zu gelangen sind zwei Transformationen notwendig: Die Richard's Transformation und die Kuroda Transformation.
-
-Mit der Richard's Transformation können die konzentrierten Elemente (L,C) des Prototypfilter mit verteilte Elementen (Stubs) ersetzt werden. Nach dieser Transformation spricht man von einem Stubfilter. Das Problem ist aber, dass sich dieses Filter nicht realisieren lässt, weil sich alle Stubs am gleichen Ort befinden. 
-
-Deshalb wird im Anschluss die Kuroda Transformation verwendet,  um eine physikalische Distanz zwischen
-den  Stubs  zu  schaffen, damit das Filter auch in Realit\"at umgesetzt  werden  kann.
 

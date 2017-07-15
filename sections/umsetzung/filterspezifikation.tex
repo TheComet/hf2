@@ -6,7 +6,7 @@ Beim zu realisierenden Stubfilter handelt es sich um ein Tiefpass-Filter 5. Ordn
 l = \frac{\lambda}{4} = \frac{c}{4 \cdot f} = \frac{300\cdot 10^6 \lbrack\frac{m}{s}\rbrack}{4 \cdot 2 \lbrack GHz \rbrack} =37.5 \lbrack mm \rbrack
 \end{equation*}
 
-Das Stubfilter wird von einem Prototypfilter (Tiefpass 5. Ordnung) 
+Zudem wird das Stubfilter von einem Prototypfilter (Tiefpass 5. Ordnung) 
 mit den Elementwerte $g_0$ bis $g_6$ abgeleitet.
 
 \begin{figure}[h!]
@@ -28,7 +28,7 @@ mit den Elementwerte $g_0$ bis $g_6$ abgeleitet.
     \end{align*} 
 \end{mdframed}
 
-Durch eine Simulation in Mirowave Office (MWO) kann gezeigt werden, dass es sich beim Prototypfilter um ein Chebyshev Filter des Typs 1 handelt, weil das Filter im Passband einen Equirippel und im Stopband keinen Rippel aufweist. 
+Durch Betrachtung der g-Parameter kann nicht direkt darauf geschlossen werden, um welchen Filtertyp (Chebyshev, Butterworth, Elliptic) es sich handelt. Deshalb wurde eine Simulation in Mirowave Office (MWO) durchgeführt. Diese zeigt, dass es sich beim Prototypfilter um ein Chebyshev Filter des Typs 1 handelt. Typisch für ein solches Chebyshev Filter ist ein Equirippel im Passband während im Stopband kein Rippel auszumachen ist. 
 
 Die Übersichtsdarstellung der Eingügedämpfung S21 (Abb. \ref{fig:Ovw_Prototyp}) zeigt, dass das Filter keinen Stopbandrippel aufweist.
 
@@ -39,10 +39,10 @@ Die Übersichtsdarstellung der Eingügedämpfung S21 (Abb. \ref{fig:Ovw_Prototyp
  	\label{fig:Ovw_Prototyp}
 \end{figure}
 
-Erst die Detailanssicht der  Einfügedämpfung  S21  in  Abb. \ref{fig:graph-LC}
-zeigt, dass das Prototypfilter im  Passband auch noch einen kleinen Equirippel
-aufweist. Ausserdem zeigt  sich  aus der Detailansicht, dass das Filter wie er
-erwartete eine Grenzfrequenz von $\omega_C = 1$ aufweist.
+Während die Detailanssicht der Einfügedämpfung  S21 in Abb. \ref{fig:graph-LC}
+den kleinen Equirippel des Passbands sichtbar macht. Ausserdem zeigt  sich aus
+der  Detailansicht, dass das  Filter  wie  erwartete  eine  Grenzfrequenz  von
+$\omega_C = 1$ aufweist.
 
 \begin{mdframed}
     \begin{equation*} 
@@ -88,7 +88,7 @@ Um das Resultat zu validieren, wurde die Reflexion S11 des Filter simuliert und 
 % 	\label{fig:Prototyp_Reflexion}
 %\end{figure}
 
-Es handelt sich beim zu realisierenden Stubfilter um ein Chebyshev Filter des Typ 1 mit folgenden Eigeschaften: 
+Zusammenfassend handelt sich beim zu realisierenden Stubfilter um ein Chebyshev Filter 5. Ordnung des Typ 1 mit folgenden Eigeschaften: 
 \begin{mdframed}
     \begin{equation*} 
         \begin{array}{cllll} 
