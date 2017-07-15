@@ -12,6 +12,7 @@
 *.bcf
 *.run.xml
 hf2_bericht_ackermann_murray.pdf
+build
 
 # MATLAB
 *.m~
