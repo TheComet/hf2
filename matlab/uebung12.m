@@ -23,26 +23,26 @@ L4p = g4;
 C5p = g5;
 R6p = g6;
 
-w = logspace(-1, 2, 1000);
-s = j*w;
-B = 1./(s*C5p + 1/R6p);
-A = s*L4p + 1./(s*C5p + 1/R6p);
-T = B ./ A;
-hold off
-semilogx(w, 20*log10(abs(T))); grid on, grid minor
-
-w = logspace(-1, 2, 5000);
-s = j*tan(pi/2 * w/2);
-B = 1./(s*C5p + 1/R6p);
-A = s*L4p + 1./(s*C5p + 1/R6p);
-T = B ./ A;
-hold on
-semilogx(w, 20*log10(abs(T))); grid on, grid minor
-ylim([-40 10]);
-ylabel('Amplitude (dB)');
-xlabel('Frequenz (rad/s)');
-legend('Vor Transformation', 'Nach Transformation');
-title('Transformation eines Tiefpassfilters');
+% w = logspace(-1, 2, 1000);
+% s = j*w;
+% B = 1./(s*C5p + 1/R6p);
+% A = s*L4p + 1./(s*C5p + 1/R6p);
+% T = B ./ A;
+% hold off
+% semilogx(w, 20*log10(abs(T))); grid on, grid minor
+% 
+% w = logspace(-1, 2, 5000);
+% s = j*tan(pi/2 * w/2);
+% B = 1./(s*C5p + 1/R6p);
+% A = s*L4p + 1./(s*C5p + 1/R6p);
+% T = B ./ A;
+% hold on
+% semilogx(w, 20*log10(abs(T))); grid on, grid minor
+% ylim([-40 10]);
+% ylabel('Amplitude (dB)');
+% xlabel('Frequenz (rad/s)');
+% legend('Vor Transformation', 'Nach Transformation');
+% title('Transformation eines Tiefpassfilters');
 
 % Richard's (dick) transformation for fc=0.8 GHz, f@90° = 2 GHz
 fc = 0.8e9;
@@ -98,3 +98,4 @@ Z4k = R0r;
 % [Z2k, C3k] = kuroda(Z2k, L3k, 'L2C');
 % [Z1k, C4k] = kuroda(Z1k, L4r, 'L2C');
 
+Z0k = 
