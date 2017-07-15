@@ -25,11 +25,13 @@ allgemeine Form:
 
 Dabei sind
 
-\begin{align*}
-    \Omega &: \textrm{normierte Frequenz des konzentrierten Netzwerkes} \\
-    \Omega' &: \textrm{reelle normierte Frequenz}\hspace{5mm}\Omega' = \tan\frac{\pi f}{2f_0} \\
-    \Omega'_c &: \textrm{reelle normierte Durchlassfrequenz}\hspace{5mm}\Omega'_c = \tan\frac{\pi f_c}{2f_0}
-\end{align*}
+\begin{tabular}{ll}
+    $\Omega$    & normierte Frequenz des konzentrierten \\ 
+                & Netzwerkes \\
+    $\Omega'$   & reelle normierte Frequenz $\Omega' = \tan\frac{\pi f}{2f_0}$ \\
+    $\Omega'_c$ & reelle normierte Durchlassfrequenz \\
+                & $\Omega'_c = \tan\frac{\pi f_c}{2f_0}$ \\
+\end{tabular}
 
 F\"ur die Leitungselemente des Filters gelten
 
@@ -41,15 +43,16 @@ F\"ur die Leitungselemente des Filters gelten
 Dabei sind
 
 \begin{tabular}{ll}
-    $L_i$ und $C_i$         & die Induktivit\"aten und Kapazi\"aten des \\
-                            & konzentrierten Filters. \\
-    $Z_{w_i}$ und $Y_{w_i}$ & die Wellenimpedanzen und Wellenadmittanzen \\
-                            & der kurzgeschlossenen und leerlaufenden \\
-                            & Leitungen des Leitungsfilters. \\
+    $L_i$ und $C_i$         & die Induktivit\"aten und Kapazi\"aten \\
+                            & des konzentrierten Filters. \\
+    $Z_{w_i}$ und $Y_{w_i}$ & die Wellenimpedanzen und Wellen-\\
+                            & admittanzen der kurzgeschlossenen \\
+                            & und leerlaufenden Leitungen \\
+                            & des Leitungsfilters. \\
 \end{tabular}
 
 Zur Visualisierung wurde mit MATLAB der  Amplitudengang  $T(s)$ eines analogen
-Chebychev-Fiefpassfilters 3.  Ordnung  mit  der  Formel  $s  =  j\tan\frac{\pi
+Chebychev-Tiefpass-filters 3.  Ordnung  mit  der  Formel  $s  =  j\tan\frac{\pi
 \omega}{2\omega_0}$ (Formel \ref{eq:richards}) transformiert. Das Resultat ist
 in der Abbildung \ref{fig:richards-example} zu sehen.
 
@@ -71,10 +74,7 @@ mit der Periodizit\"at
 Wobei $\nu_p$ die Phasengeschwindigkeit auf der Leitung ist.
 
 Die Periodizit\"at war  zu  erwarten,  da  alle Leitungenselemente die gleiche
-L\"ange $l$ haben und so eine ortsabh\"angige wiederholung der Phase bewirken.
-Unerw\"unschte Durchlassbereiche bei  h\"oheren Frequenzen k\"onnen anhand von
-in Kaskade geschaltenen Filtern mit unterschiedlich  hohen  Durchlassbereichen
-unterdr\"uckt werden.
+L\"ange $l$ haben.
 
 \begin{figure}[h!]
     \centering
